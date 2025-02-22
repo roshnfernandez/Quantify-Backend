@@ -21,10 +21,10 @@ public class PromptBuilder {
     public String buildGraphAxesPrompt(List<String> columnNames){
         String concatColumnNames = concatListValues(columnNames);
         String graphTypes = concatListValues(PromptConstants.GRAPH_TYPES);
-        return MessageFormat.format(
+        return optimizePrompt(MessageFormat.format(
                 PromptConstants.GET_GRAPH_AXES_PARAMS,
                 concatColumnNames,
-                graphTypes);
+                graphTypes),PromptConstants.JSON_STRUCTURE).toString();
     }
 
     public Prompt buildGraphPrompt(List<String> xAxisValues, List<String> yAxisValues, String xAxis, String yAxis, String graphType){
