@@ -33,4 +33,3 @@ build/
 .vscode/
 
 /SecretKeys
-/.run/QuantifyApplication.run.xml
